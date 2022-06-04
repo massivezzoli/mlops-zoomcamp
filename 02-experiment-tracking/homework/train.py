@@ -5,22 +5,30 @@ import pickle
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
+import mlflow   
+
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
+print(f"tracking URI: '{mlflow.get_tracking_uri()}'")
+print(mlflow.list_experiments())
+mlflow.set_experiment("mv2")
 
 def load_pickle(filename: str):
     with open(filename, "rb") as f_in:
         return pickle.load(f_in)
 
 
+
 def run(data_path):
 
     X_train, y_train = load_pickle(os.path.join(data_path, "train.pkl"))
     X_valid, y_valid = load_pickle(os.path.join(data_path, "valid.pkl"))
+    mlflow.sklearn.autolog()
+    with mlflow.start_run() as run:
+        rf = RandomForestRegressor(max_depth=10, random_state=0)
+        rf.fit(X_train, y_train)
+        y_pred = rf.predict(X_valid)
 
-    rf = RandomForestRegressor(max_depth=10, random_state=0)
-    rf.fit(X_train, y_train)
-    y_pred = rf.predict(X_valid)
-
-    rmse = mean_squared_error(y_valid, y_pred, squared=False)
+        rmse = mean_squared_error(y_valid, y_pred, squared=False)
 
 
 if __name__ == '__main__':
