@@ -2,3 +2,6 @@ data/
 .ipynb_checkpoints
 .bin
 *.db
+**/result/*
+**/mlruns/*
+.vscode
