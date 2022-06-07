@@ -10,3 +10,6 @@ data/
 .venv
 venv
 .idea
+**/mlruns/*
+**/result/*
+.vscode
