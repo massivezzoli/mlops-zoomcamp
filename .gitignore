@@ -5,3 +5,11 @@ data/
 **/result/*
 **/mlruns/*
 .vscode
+
+*.parquet
+*.html
+*.csv
+
+.venv
+venv
+.idea
