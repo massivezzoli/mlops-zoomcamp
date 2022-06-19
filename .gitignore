@@ -13,3 +13,5 @@ venv
 **/mlruns/*
 **/result/*
 .vscode
+**/artifacts/
+**/models/
