@@ -16,7 +16,7 @@ Run this notebook for the February 2021 FVH data.
 What's the mean predicted duration for this dataset?
 
 * 11.19
-* 16.19
+* **16.19**
 * 21.19
 * 26.19
 
@@ -47,7 +47,7 @@ df_result.to_parquet(
 What's the size of the output file?
 
 * 9M
-* 19M
+* **19M**
 * 29M
 * 39M
 
@@ -60,6 +60,8 @@ dtypes of the columns and use pyarrow, not fastparquet.
 Now let's turn the notebook into a script. 
 
 Which command you need to execute for that?
+
+`jupyter nbconvert starter.ipynb --to python`
 
 
 ## Q4. Virtual environment
@@ -75,7 +77,7 @@ dependencies we use for the virtual env.
 
 What's the first hash for the Scikit-Learn dependency?
 
-
+`"sha256:0e3e1fcc45199df76053026a51cc59ab2ea3fc7c094c6627e93b7b44cdae2c8c"`
 ## Q5. Parametrize the script
 
 Let's now make the script configurable via CLI. We'll create two 
@@ -86,7 +88,7 @@ Run the script for March 2021.
 What's the mean predicted duration? 
 
 * 11.29
-* 16.29
+* **16.29**
 * 21.29
 * 26.29
 
@@ -130,7 +132,7 @@ Now run the script with docker. What's the mean predicted duration
 for April 2021? 
 
 
-* 9.96
+* **9.96**
 * 16.55
 * 25.96
 * 36.55
